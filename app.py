@@ -1147,7 +1147,10 @@ def render_derived_features_explanation() -> None:
         {
             "Variable derivada": "Approx mechanical power",
             "Fórmula": "Torque [Nm] * Rotational speed [rpm]",
-            "Sentido técnico": "Aproxima carga mecánica operativa.",
+            "Sentido técnico": (
+                "Índice proporcional de carga mecánica/potencia operativa. "
+                "No representa potencia exacta en watts."
+            ),
         },
         {
             "Variable derivada": "Torque wear load",
@@ -1171,7 +1174,11 @@ def render_derived_features_explanation() -> None:
             """
             Además de las variables originales, SIMAP-IA genera variables derivadas
             dentro del pipeline. Estas variables ayudan al modelo a capturar relaciones
-            físicas y operativas que no aparecen explícitamente en el dataset.
+            térmicas, mecánicas y operativas que no aparecen explícitamente en el dataset.
+
+            Nota técnica: la variable Approx mechanical power usa Torque [Nm] * Rotational speed [rpm]
+            como índice proporcional de carga mecánica. No corresponde a potencia física exacta en watts.
+            La potencia física exacta requeriría convertir rpm a velocidad angular en rad/s.
             """
         )
         st.table(pd.DataFrame(derived_rows))
