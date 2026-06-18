@@ -586,8 +586,9 @@ def append_row_to_google_sheets(
         worksheet.append_row(ordered_row, value_input_option="USER_ENTERED")
         return True, f"Registro guardado en Google Sheets: {worksheet_name}."
     except Exception as error:
-        LOGGER.warning("No fue posible guardar en Google Sheets: %s", error)
-        return False, f"No fue posible guardar en Google Sheets: {error}"
+        error_detail = f"{type(error).__name__}: {repr(error)}"
+        LOGGER.exception("No fue posible guardar en Google Sheets: %s", error_detail)
+        return False, f"No fue posible guardar en Google Sheets: {error_detail}"
 
 
 def append_row_persistent(
