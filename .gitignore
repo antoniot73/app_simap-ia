@@ -1,0 +1,93 @@
+# ==========================================================
+# SIMAP-IA - Archivos excluidos del repositorio público
+# ==========================================================
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Caché y archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs y salidas locales
+*.log
+logs/
+registros/
+reports_local/
+tmp/
+temp/
+
+# Variables de entorno y secretos
+.env
+.env.*
+*.env
+.streamlit/secrets.toml
+.streamlit/*.backup.*.toml
+
+# Credenciales y llaves privadas
+*.json
+*.pem
+*.key
+*.p12
+*.crt
+*.cer
+credentials/
+secrets/
+keys/
+
+# Credenciales específicas de Google / Kaggle / APIs
+kaggle.json
+google_service_account*.json
+service_account*.json
+*service-account*.json
+*credentials*.json
+
+# Scripts locales de configuración y prueba
+setup_google_sheets_secrets.py
+test_google_sheets_direct.py
+reset_secrets_simap.py
+patch_grafico_torque_velocidad.py
+
+# Carpetas o scripts privados de entrenamiento
+simap-ia-local-private/
+training/
+data_ingestion/
+notebooks/
+tests/
+
+# Datos privados o generados localmente
+data/raw/
+data/processed/
+exported_artifacts/
+models_local/
+
+# Backups locales
+*_backup.py
+app_backup_*.py
+*.bak
+*.backup
+
+# Mantener permitido el ejemplo de secrets
+!.streamlit/secrets.example.toml
+
+# Mantener permitidos los artefactos públicos necesarios
+!artifacts/simap_pipeline.joblib
+!artifacts/model_metrics.json
+!artifacts/threshold_config.json
+!artifacts/feature_schema.json
+# Proteger backups de secretos de Streamlit
+.streamlit/secrets*.toml
+!.streamlit/secrets.example.toml

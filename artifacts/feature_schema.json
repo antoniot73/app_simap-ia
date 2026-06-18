@@ -1,0 +1,32 @@
+{
+  "required_features": [
+    "Type",
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]"
+  ],
+  "derived_features": [
+    "Thermal delta [K]",
+    "Approx mechanical power",
+    "Torque wear load",
+    "Torque speed ratio",
+    "Tool wear normalized"
+  ],
+  "excluded_features": [
+    "UDI",
+    "Product ID",
+    "TWF",
+    "HDF",
+    "PWF",
+    "OSF",
+    "RNF"
+  ],
+  "target": "Machine failure",
+  "allowed_type_values": [
+    "L",
+    "M",
+    "H"
+  ]
+}
